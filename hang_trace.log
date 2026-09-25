@@ -1,0 +1,396 @@
+Timeout (0:02:00)!
+Thread 0x00007f5f767036c0 [IPythonHistoryS] (most recent call first):
+  File "/usr/lib/python3.14/threading.py", line 369 in wait
+  File "/usr/lib/python3.14/threading.py", line 670 in wait
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 1272 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 163 in wrapper
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f777fe6c0 [Shell channel] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/shellchannel.py", line 52 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f77fff6c0 [Control] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8c8376c0 [Thread-2 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 481 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8d0386c0 [Thread-1 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 477 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8e83b6c0 [Heartbeat] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/zmq/sugar/__init__.py", line 21 in device
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/heartbeat.py", line 124 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8f03c6c0 [IOPub] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 167 in _thread_main
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f92949200 [python] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/kernelapp.py", line 807 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/traitlets/config/application.py", line 1080 in launch_instance
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel_launcher.py", line 18 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main
+Timeout (0:02:00)!
+Thread 0x00007f5f767036c0 [IPythonHistoryS] (most recent call first):
+  File "/usr/lib/python3.14/threading.py", line 369 in wait
+  File "/usr/lib/python3.14/threading.py", line 670 in wait
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 1272 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 163 in wrapper
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f777fe6c0 [Shell channel] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/shellchannel.py", line 52 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f77fff6c0 [Control] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8c8376c0 [Thread-2 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 481 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8d0386c0 [Thread-1 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 477 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8e83b6c0 [Heartbeat] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/zmq/sugar/__init__.py", line 21 in device
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/heartbeat.py", line 124 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8f03c6c0 [IOPub] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 167 in _thread_main
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f92949200 [python] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/kernelapp.py", line 807 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/traitlets/config/application.py", line 1080 in launch_instance
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel_launcher.py", line 18 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main
+Timeout (0:02:00)!
+Thread 0x00007f5f767036c0 [IPythonHistoryS] (most recent call first):
+  File "/usr/lib/python3.14/threading.py", line 369 in wait
+  File "/usr/lib/python3.14/threading.py", line 670 in wait
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 1272 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 163 in wrapper
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f777fe6c0 [Shell channel] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/shellchannel.py", line 52 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f77fff6c0 [Control] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8c8376c0 [Thread-2 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 481 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8d0386c0 [Thread-1 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 477 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8e83b6c0 [Heartbeat] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/zmq/sugar/__init__.py", line 21 in device
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/heartbeat.py", line 124 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8f03c6c0 [IOPub] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 167 in _thread_main
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f92949200 [python] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/kernelapp.py", line 807 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/traitlets/config/application.py", line 1080 in launch_instance
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel_launcher.py", line 18 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main
+Timeout (0:02:00)!
+Thread 0x00007f5f767036c0 [IPythonHistoryS] (most recent call first):
+  File "/usr/lib/python3.14/threading.py", line 369 in wait
+  File "/usr/lib/python3.14/threading.py", line 670 in wait
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 1272 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 163 in wrapper
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f777fe6c0 [Shell channel] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/shellchannel.py", line 52 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f77fff6c0 [Control] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8c8376c0 [Thread-2 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 481 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8d0386c0 [Thread-1 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 477 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8e83b6c0 [Heartbeat] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/zmq/sugar/__init__.py", line 21 in device
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/heartbeat.py", line 124 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8f03c6c0 [IOPub] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 167 in _thread_main
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f92949200 [python] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/kernelapp.py", line 807 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/traitlets/config/application.py", line 1080 in launch_instance
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel_launcher.py", line 18 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main
+Timeout (0:02:00)!
+Thread 0x00007f5f767036c0 [IPythonHistoryS] (most recent call first):
+  File "/usr/lib/python3.14/threading.py", line 369 in wait
+  File "/usr/lib/python3.14/threading.py", line 670 in wait
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 1272 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 163 in wrapper
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f777fe6c0 [Shell channel] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/shellchannel.py", line 52 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f77fff6c0 [Control] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8c8376c0 [Thread-2 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 481 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8d0386c0 [Thread-1 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 477 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8e83b6c0 [Heartbeat] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/zmq/sugar/__init__.py", line 21 in device
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/heartbeat.py", line 124 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8f03c6c0 [IOPub] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 167 in _thread_main
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f92949200 [python] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/kernelapp.py", line 807 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/traitlets/config/application.py", line 1080 in launch_instance
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel_launcher.py", line 18 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main
+Timeout (0:02:00)!
+Thread 0x00007f5f767036c0 [IPythonHistoryS] (most recent call first):
+  File "/usr/lib/python3.14/threading.py", line 369 in wait
+  File "/usr/lib/python3.14/threading.py", line 670 in wait
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 1272 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/IPython/core/history.py", line 163 in wrapper
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f777fe6c0 [Shell channel] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/shellchannel.py", line 52 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f77fff6c0 [Control] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/thread.py", line 24 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8c8376c0 [Thread-2 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 481 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8d0386c0 [Thread-1 (_watc] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 477 in _watch_pipe_fd
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8e83b6c0 [Heartbeat] (most recent call first):
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/zmq/sugar/__init__.py", line 21 in device
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/heartbeat.py", line 124 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f8f03c6c0 [IOPub] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/iostream.py", line 167 in _thread_main
+  File "/usr/lib/python3.14/threading.py", line 1024 in run
+  File "/usr/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/usr/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00007f5f92949200 [python] (most recent call first):
+  File "/usr/lib/python3.14/selectors.py", line 452 in select
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 2019 in _run_once
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 677 in run_forever
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/tornado/platform/asyncio.py", line 211 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel/kernelapp.py", line 807 in start
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/traitlets/config/application.py", line 1080 in launch_instance
+  File "/home/hau/kuki_llm/venvKuki/lib/python3.14/site-packages/ipykernel_launcher.py", line 18 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main

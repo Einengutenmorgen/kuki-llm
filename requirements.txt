@@ -1,0 +1,13 @@
+# lm-format-enforcer does not support transformers 5 yet; OLMo 3 needs >= 4.57
+transformers>=4.57,<4.58
+torch
+accelerate
+lm-format-enforcer
+pandas
+numpy
+krippendorff
+simplemma
+statsmodels
+tqdm
+accelerate
+python-dotenv
