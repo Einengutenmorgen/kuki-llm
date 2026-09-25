@@ -1,0 +1,29 @@
+{
+  "en": {
+    "task_doc": "Annotate the following article according to the codebook. Its paragraphs are numbered [P0], [P1], [P2] and so on.",
+    "task_para": "Annotate only the following paragraph according to the codebook.",
+    "context_header": "Full article, for context only (paragraphs numbered [P0], [P1], [P2] and so on):",
+    "task_para_ctx": "Using the article above as context, annotate only paragraph [P{i}] according to the codebook:",
+    "entities_header": "Named entities to consider (use exactly these strings):",
+    "meta": "Source: {source}. Author: {author}.",
+    "output": "Answer only with JSON in the required format."
+  },
+  "ru": {
+    "task_doc": "Разметьте следующую статью в соответствии с кодбуком. Её абзацы пронумерованы [P0], [P1], [P2] и т. д.",
+    "task_para": "Разметьте только следующий абзац в соответствии с кодбуком.",
+    "context_header": "Полный текст статьи, только для контекста (абзацы пронумерованы [P0], [P1], [P2] и т. д.):",
+    "task_para_ctx": "Используя статью выше как контекст, разметьте только абзац [P{i}] в соответствии с кодбуком:",
+    "entities_header": "Именованные сущности для разметки (используйте именно эти строки):",
+    "meta": "Источник: {source}. Автор: {author}.",
+    "output": "Отвечайте только в формате JSON в требуемой структуре."
+  },
+  "tr": {
+    "task_doc": "Aşağıdaki makaleyi kod kitabına göre etiketleyin. Paragrafları [P0], [P1], [P2] vb. şeklinde numaralandırılmıştır.",
+    "task_para": "Yalnızca aşağıdaki paragrafı kod kitabına göre etiketleyin.",
+    "context_header": "Makalenin tamamı, yalnızca bağlam için (paragraflar [P0], [P1], [P2] vb. şeklinde numaralandırılmıştır):",
+    "task_para_ctx": "Yukarıdaki makaleyi bağlam olarak kullanarak yalnızca [P{i}] paragrafını kod kitabına göre etiketleyin:",
+    "entities_header": "Dikkate alınacak adlandırılmış varlıklar (tam olarak bu ifadeleri kullanın):",
+    "meta": "Kaynak: {source}. Yazar: {author}.",
+    "output": "Yalnızca istenen yapıda JSON ile yanıt verin."
+  }
+}
