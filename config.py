@@ -14,8 +14,7 @@ BASE_DIR = ROOT / "test_run" if TEST_MODE else ROOT
 
 DATA_DIR = BASE_DIR / "data"
 PROMPT_DIR = BASE_DIR / "prompts"
-RAW_DIR = DATA_DIR / "raw"             # Label Studio JSON exports
-PREP_DIR = DATA_DIR / "prepared"       # written by prep_00_parse_exports.py
+PREP_DIR = DATA_DIR / "prepared"       # written by prep_00_load_data.py
 SPLIT_DIR = DATA_DIR / "splits"        # written by prep_01_make_splits.py
 PRED_DIR = DATA_DIR / "predictions"    # raw LLM outputs, one JSONL per experiment and model
 RESULT_DIR = DATA_DIR / "results"      # written by evaluate.py / analyze_s1_decomposition.py
@@ -24,16 +23,11 @@ print(f"[config] {'TEST' if TEST_MODE else 'REAL'} data: {DATA_DIR}")
 
 SEED = 13
 
-# One Label Studio project per annotator slot -> one JSON export per slot.
-EXPORTS = {
-    ("ru", "A"): "ru_A.json", ("ru", "B"): "ru_B.json", ("ru", "C"): "ru_C.json",
-    ("tr", "A"): "tr_A.json", ("tr", "B"): "tr_B.json", ("tr", "C"): "tr_C.json",
-}
-# Label Studio user id -> annotator letter. The annotator of an annotation is its user, not the
-# project: A annotators also worked in other slots' projects (dataset description, sections 3 and 5).
+# Input: the two aggregate files of the dataset (one record per article, all annotators).
+# Not in git (size); copy them into data/. The test notebook writes synthetic ones in the same format.
+AGGREGATES = {"ru": DATA_DIR / "kuki_ru_aggregate.jsonl", "tr": DATA_DIR / "kuki_tr_aggregate.jsonl"}
+# Label Studio user id -> annotator letter (dataset description, section 3).
 ANNOTATOR_IDS = {"ru": {8: "A", 4: "B", 10: "C"}, "tr": {11: "A", 7: "B", 6: "C"}}
-# Article metadata: our name -> field name in task["data"] of the export. VERIFY field names.
-TASK_META_FIELDS = {"source": "source", "author": "author"}
 
 # Label sets exactly as they appear in the Label Studio config.
 ROLES = ["PROTAGONIST", "ANTAGONIST", "INNOCENT"]
@@ -47,9 +41,8 @@ PERSUASION = ["Attack on Reputation", "Justification", "Simplification",
               "Distraction", "Call", "Manipulative Wording"]
 LABELS = {"L1": ROLES, "L2": FRAMES, "L3": PERSUASION}
 
-# Label Studio control names (from_name) per layer.
-LS_FIELDS = {"L1": "l1_roles", "L2": "l2_frames", "L3": "l3_persuasion", "L4": "l4_coded"}
-L4_TEXT_FIELDS = {"l4_literal": "literal", "l4_insider": "insider", "l4_why": "why"}
+# Span layer names as they appear in the aggregate files (Label Studio control names).
+LS_FIELDS = {"L1": "l1_roles", "L3": "l3_persuasion", "L4": "l4_coded"}
 
 # Crossed factors of the main grid.
 GRANULARITIES = ["doc", "para", "para_ctx"]
@@ -62,7 +55,7 @@ L2_PARA_MIN = 1
 # Source -> (name shown in metadata prompts, orientation pole). VERIFY keys and poles.
 SOURCES = {
     "ria_novosti": ("RIA Novosti", "gov_close"),
-    "ng_vision": ("Nezavisimaya Gazeta", "gov_close"),
+    "ng": ("Nezavisimaya Gazeta", "gov_close"),
     "theinsider": ("The Insider", "gov_distant"),
     "holod": ("Holod", "gov_distant"),
     "sabah": ("Sabah", "gov_close"),

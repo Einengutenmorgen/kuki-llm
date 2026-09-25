@@ -9,5 +9,3 @@ krippendorff
 simplemma
 statsmodels
 tqdm
-accelerate
-python-dotenv

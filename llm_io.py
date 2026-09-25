@@ -12,8 +12,6 @@ from functools import lru_cache
 from itertools import product
 
 import pandas as pd
-import os
-os.environ["Cuda_VISIBLE_DEVICES"] = "2" 
 import torch
 from lmformatenforcer import JsonSchemaParser
 from lmformatenforcer.integrations.transformers import (
@@ -87,7 +85,8 @@ def build_messages(article, layer, granularity, prompt_lang, target=None, meta=N
 
     parts = []
     if meta:
-        parts.append(w["meta"].format(**meta))
+        line = w["meta"].format(source=meta["source"])
+        parts.append(line + (" " + w["meta_author"].format(author=meta["author"]) if "author" in meta else ""))
     if granularity == "doc":
         parts += [w["task_doc"], full_article]
     elif granularity == "para":
@@ -177,9 +176,13 @@ def load_model(model):
     if cfg["hf"].startswith("TODO"):
         raise ValueError(f"model '{model}' has no checkpoint id in config.MODELS")
     tokenizer = AutoTokenizer.from_pretrained(cfg["hf"])
-    llm = AutoModelForCausalLM.from_pretrained(cfg["hf"], dtype="auto", device_map="auto")
+    device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
+    llm = AutoModelForCausalLM.from_pretrained(
+        cfg["hf"], dtype="auto", device_map="auto" if device == "cuda" else device
+    )
     llm.eval()
     return {"tokenizer": tokenizer, "model": llm, "enforcer": build_token_enforcer_tokenizer_data(tokenizer)}
+
 
 def generate(backend, cfg, messages, schema, job):
     """One constrained generation. Returns (text, finish_reason, tokens_in, tokens_out, error)."""

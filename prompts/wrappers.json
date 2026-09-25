@@ -5,7 +5,8 @@
     "context_header": "Full article, for context only (paragraphs numbered [P0], [P1], [P2] and so on):",
     "task_para_ctx": "Using the article above as context, annotate only paragraph [P{i}] according to the codebook:",
     "entities_header": "Named entities to consider (use exactly these strings):",
-    "meta": "Source: {source}. Author: {author}.",
+    "meta": "Source: {source}.",
+    "meta_author": "Author: {author}.",
     "output": "Answer only with JSON in the required format."
   },
   "ru": {
@@ -14,7 +15,8 @@
     "context_header": "Полный текст статьи, только для контекста (абзацы пронумерованы [P0], [P1], [P2] и т. д.):",
     "task_para_ctx": "Используя статью выше как контекст, разметьте только абзац [P{i}] в соответствии с кодбуком:",
     "entities_header": "Именованные сущности для разметки (используйте именно эти строки):",
-    "meta": "Источник: {source}. Автор: {author}.",
+    "meta": "Источник: {source}.",
+    "meta_author": "Автор: {author}.",
     "output": "Отвечайте только в формате JSON в требуемой структуре."
   },
   "tr": {
@@ -23,7 +25,8 @@
     "context_header": "Makalenin tamamı, yalnızca bağlam için (paragraflar [P0], [P1], [P2] vb. şeklinde numaralandırılmıştır):",
     "task_para_ctx": "Yukarıdaki makaleyi bağlam olarak kullanarak yalnızca [P{i}] paragrafını kod kitabına göre etiketleyin:",
     "entities_header": "Dikkate alınacak adlandırılmış varlıklar (tam olarak bu ifadeleri kullanın):",
-    "meta": "Kaynak: {source}. Yazar: {author}.",
+    "meta": "Kaynak: {source}.",
+    "meta_author": "Yazar: {author}.",
     "output": "Yalnızca istenen yapıda JSON ile yanıt verin."
   }
 }

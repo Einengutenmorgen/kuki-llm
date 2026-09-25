@@ -3,7 +3,7 @@
   dev.csv                  single-annotated articles, only for prompt and parsing debugging
   s1_main_grid.csv         core set: all articles with >= 2 annotators (human ceiling defined)
   s2_stability.csv         core set
-  s3_metadata_probe.csv    core set + a swapped source/author from the opposite orientation pole
+  s3_metadata_probe.csv    core set + a swapped source from the opposite orientation pole
   s4_generalisation.csv    single-annotated articles not used in dev
   s5_l4_pilot.csv          random sample of the core set
 
@@ -20,9 +20,7 @@ from llm_io import read_jsonl
 
 def with_swaps(df, all_articles):
     """For each article, pick a random article of the same language from the opposite
-    orientation pole and take its source and author as the 'swapped' metadata."""
-    if df["author"].isna().any():
-        raise ValueError("s3 needs an author for every core article")
+    orientation pole and take its source (and author, if the data has one) as the 'swapped' metadata."""
     pole = all_articles["source"].map(lambda s: config.SOURCES[s][1])
     rng = random.Random(config.SEED)
     swap_source, swap_author = [], []

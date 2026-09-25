@@ -8,7 +8,7 @@ journalism approximate human annotation?
 
 | Step | Script | Output |
 |---|---|---|
-| 0a | `prep_00_parse_exports.py` | `data/prepared/` articles, dense human labels, L4 spans |
+| 0a | `prep_00_load_data.py` | `data/prepared/` articles, dense human labels, L4 spans |
 | 0b | `prep_01_make_splits.py` | `data/splits/<experiment>.csv` |
 | 1 | `s1_main_grid.py --model X` (first with `--dev`) | `data/predictions/s1_main_grid__X.jsonl` |
 | 2 | `s2_stability.py --model X --granularity G --prompt-lang P` | `.../s2_stability__X.jsonl` |
@@ -29,12 +29,24 @@ constrained decoding (lm-format-enforcer). Choose GPUs with CUDA_VISIBLE_DEVICES
 Predictions are written per experiment and model (`<experiment>__<model>.jsonl`), so two
 runs on two GPUs never share a file; `evaluate.py` reads all models of an experiment.
 Install: `pip install -r requirements.txt`.
-Tests without GPU: `test_pipeline.ipynb` (mock models on synthetic exports).
+## Real data vs. test data
+
+All paths are anchored at the repository folder (`config.ROOT`), independent of the working directory.
+
+| | Real runs | Tests |
+|---|---|---|
+| Switch | nothing (default) | `KUKI_TEST=1`, set by `test_pipeline.ipynb` before `import config` |
+| Data | `<repo>/data/` | `<repo>/test_run/data/` |
+| Prompts | `<repo>/prompts/` | `<repo>/test_run/prompts/` (dummy codebooks) |
+| Notebook | `test_experiments.ipynb` (data check, prep, prompt check, model smoke test) | `test_pipeline.ipynb` (mock models, synthetic aggregate file) |
+
+Every script prints which data folder it uses (`[config] REAL data: ...`). Run each notebook in
+its own fresh kernel; both refuse to start if `config` was already imported.
 
 ## Before the first real run
 
-1. Put the six Label Studio JSON exports into `data/raw/` (names in `config.EXPORTS`).
-2. Check `config.TASK_META_FIELDS` and `config.SOURCES`.
+1. Copy `kuki_ru_aggregate.jsonl` and `kuki_tr_aggregate.jsonl` into `data/` (not in git: size).
+2. Check the orientation poles in `config.SOURCES`.
 3. Write `prompts/codebook_<L1|L2|L3|L4>_<en|ru|tr>.md`: codebook v1.0 §1.3 + golden rule +
    the layer section. RU/TR versions: translated and back-checked by the annotators.
 4. Have the annotators check the RU/TR sentences in `prompts/wrappers.json`.
