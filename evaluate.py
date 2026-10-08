@@ -56,7 +56,7 @@ def positives(record, article):
                 pairs.add((f"p{p}", t["category"]))
         return pairs
     key_of = {e["display"]: e["key"] for e in article["entities"]}
-    return {(f"e:{key_of[r['entity']]}", r["role"]) for r in out["roles"]}
+    return {(f"e:{article['entities'][int(r['entity'][1:])]['key']}", r["role"]) for r in out["roles"]}
 
 
 def llm_unit_labels(records, articles):

@@ -13,6 +13,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--model", required=True, help="alias in config.MODELS")
 parser.add_argument("--layers", nargs="+", default=["L1", "L2", "L3"])
 parser.add_argument("--dev", action="store_true")
+parser.add_argument("--prompt-langs", nargs="+", default=config.PROMPT_LANGS)
+
 args = parser.parse_args()
 
 EXPERIMENT = "s1_dev" if args.dev else "s1_main_grid"
@@ -20,5 +22,5 @@ articles = llm_io.load_split("dev" if args.dev else "s1_main_grid")
 articles = [a for a in articles if a["lang"] in config.MODELS[args.model]["langs"]]
 
 jobs = llm_io.make_jobs(EXPERIMENT, articles, args.model, args.layers,
-                        config.GRANULARITIES, config.PROMPT_LANGS)
+                        config.GRANULARITIES, args.prompt_langs)
 llm_io.run_jobs(jobs, EXPERIMENT, args.model)

@@ -60,10 +60,11 @@ def load_article(rec, dropped):
                 surface_forms[key][s["text"].strip()] += 1
 
     article = {"article_id": rec["doc_id"], "lang": lang, "source": rec["source"],
-               "author": rec.get("author"), "published_at": rec.get("published_at"),
-               "content": content, "n_paragraphs": len(paragraphs(content)),
-               "annotators": sorted(annotations), "n_annotators": len(annotations),
-               "entities": [{"key": k, "display": forms.most_common(1)[0][0]}
+                "author": rec.get("author"), "published_at": rec.get("published_at"),
+                "content": content, "n_paragraphs": len(paragraphs(content, lang)),
+
+                "annotators": sorted(annotations), "n_annotators": len(annotations),
+                "entities": [{"key": k, "display": forms.most_common(1)[0][0]}
                             for k, forms in sorted(surface_forms.items())]}
     return article, annotations
 
@@ -71,7 +72,8 @@ def load_article(rec, dropped):
 def label_rows(article, annotations):
     """Dense human labels (every unit x label for every annotator) and the L4 spans."""
     rows, l4_rows = [], []
-    lang, aid, paras = article["lang"], article["article_id"], paragraphs(article["content"])
+    lang, aid, paras = article["lang"], article["article_id"], paragraphs(article["content"], article["lang"])
+
     for annotator, (frames, spans) in annotations.items():
         def add(layer, unit, positives):
             for label in config.LABELS[layer]:

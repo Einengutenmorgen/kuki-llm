@@ -5,13 +5,18 @@ Every experiment uses these functions, so prompts and decoding settings are
 identical across experiments.
 """
 import hashlib
+import re
 import json
 import random
 import time
 from functools import lru_cache
 from itertools import product
-
+from tqdm import tqdm
 import pandas as pd
+import os 
+from dotenv import load_dotenv
+load_dotenv()
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "2")
 import torch
 from lmformatenforcer import JsonSchemaParser
 from lmformatenforcer.integrations.transformers import (
@@ -32,16 +37,17 @@ def read_jsonl(path):
         return [json.loads(line) for line in f]
 
 
-def paragraphs(content):
-    """Split the content field into paragraphs (at blank lines) with character offsets.
-    Empty blocks are skipped."""
+def paragraphs(content, lang):
+    """Paragraphs with character offsets; whitespace-only blocks are skipped. RU exports
+    separate paragraphs with single newlines. TR uses blank lines; its single newlines are
+    list items or hard line wraps from print layout, so they stay inside the paragraph."""
+    sep = "\n" if lang == "ru" else "\n\n"
     out, pos = [], 0
-    for part in content.split("\n\n"):
+    for part in content.split(sep):
         if part.strip():
             out.append({"start": pos, "end": pos + len(part), "text": part})
-        pos += len(part) + 2
+        pos += len(part) + len(sep)
     return out
-
 
 def load_split(name):
     """Articles of one split (see prep_01_make_splits.py) with the split columns attached."""
@@ -80,7 +86,8 @@ def build_messages(article, layer, granularity, prompt_lang, target=None, meta=N
     shared prefix across the paragraph calls of one article."""
     lang = article["lang"] if prompt_lang == "native" else "en"
     w = load_wrappers()[lang]
-    paras = paragraphs(article["content"])
+    paras = paragraphs(article["content"], article["lang"])
+
     full_article = "\n\n".join(f"[P{i}] {p['text']}" for i, p in enumerate(paras))
 
     parts = []
@@ -97,19 +104,19 @@ def build_messages(article, layer, granularity, prompt_lang, target=None, meta=N
     else:
         raise ValueError(f"unknown granularity {granularity}")
     if layer == "L1":
-        parts.append(w["entities_header"] + "\n" + "\n".join(entity_names(article)))
+        parts.append(w["entities_header"] + "\n" + "\n".join(f"[E{i}] {name}" for i, name in enumerate(entity_names(article))))
     parts.append(w["output"])
 
     return [{"role": "system", "content": load_codebook(layer, lang)},
             {"role": "user", "content": "\n\n".join(parts)}]
 
 
-def output_schema(layer, entities=None):
+def output_schema(layer, n_entities=None):
     """JSON schema enforced by guided decoding. Label identifiers are always the English
     codebook labels, so outputs are comparable across prompt languages."""
     if layer == "L1":
         key, item = "roles", {"type": "object", "required": ["entity", "role"], "properties": {
-            "entity": {"type": "string", "enum": entities},
+            "entity": {"type": "string", "enum": [f"E{i}" for i in range(n_entities or 0)]},
             "role": {"type": "string", "enum": config.ROLES}}}
     elif layer == "L2":
         key, item = "frames", {"type": "string", "enum": config.FRAMES}
@@ -197,7 +204,8 @@ def generate(backend, cfg, messages, schema, job):
 
     # Decoding is set explicitly, so model-specific defaults in generation_config
     # (e.g. top_p, top_k, repetition_penalty) cannot differ between models.
-    decoding = {"do_sample": False, "repetition_penalty": 1.0}
+    decoding = {"do_sample": False, "temperature": None, "top_p": None, "top_k": None,
+                "repetition_penalty": 1.0}
     if job["temperature"] > 0:
         decoding.update(do_sample=True, temperature=job["temperature"], top_p=1.0, top_k=0)
     torch.manual_seed(config.SEED + job["sample"])
@@ -225,7 +233,7 @@ def call_llm(backend, job):
     cfg = config.MODELS[job["model"]]
     meta = (a.get("meta") or {}).get(job["metadata"])
     messages = build_messages(a, layer, job["granularity"], job["prompt_lang"], job["target"], meta)
-    schema = output_schema(layer, entity_names(a) if layer == "L1" else None)
+    schema = output_schema(layer, len(a["entities"]) if layer == "L1" else None)
     if cfg.get("merge_system"):  # some chat templates (e.g. Gemma 2) reject a system role
         messages = [{"role": "user", "content": messages[0]["content"] + "\n\n" + messages[1]["content"]}]
 
@@ -264,8 +272,9 @@ def run_jobs(jobs, experiment, model):
     backend = load_model(model)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("a", encoding="utf-8") as f:
-        for n, job in enumerate(todo, 1):
-            f.write(json.dumps(call_llm(backend, job), ensure_ascii=False) + "\n")
+        for job in tqdm(todo, desc=out_path.stem, unit="call", mininterval=10):
+            record = call_llm(backend, job)
+            if record["error"] == "out of GPU memory":
+                continue  # caused by other jobs on the shared GPU -> retried on the next run
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
             f.flush()
-            if n % 100 == 0:
-                print(f"  {n}/{len(todo)}")
